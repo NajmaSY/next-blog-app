@@ -3,7 +3,7 @@ export default async function Comments({ postSlug }: { postSlug: string }) {
   let comments = [];
   try {
     const commentsResult = await fetch(
-      `${WEBSITE_URL}/api/commments/${postSlug}`,
+      `${WEBSITE_URL}/api/comments/${postSlug}`,
       { next: { revalidate: 5 } }
     );
     const response = await commentsResult.json();
@@ -33,7 +33,7 @@ export default async function Comments({ postSlug }: { postSlug: string }) {
         return (
           <li key={comment.id}>
             {comment.username} says... <br />
-            {comment.comment}
+            {comment.content}
           </li>
         );
       })}
