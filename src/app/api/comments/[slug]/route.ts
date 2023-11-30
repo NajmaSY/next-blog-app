@@ -11,9 +11,14 @@ export async function GET(
   { params }: { params: { slug: string } }
 ) {
   // this should def be in a try catch!
-  const slug = params.slug;
-  const comments = await getComments(slug);
-  return NextResponse.json({ comments });
+
+  try {
+    const slug = params.slug;
+    const comments = await getComments(slug);
+    return NextResponse.json({ comments });
+  } catch (error) {
+    return NextResponse.json({ error });
+  }
 }
 
 export async function POST(
