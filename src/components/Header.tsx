@@ -5,7 +5,7 @@ export default function Header() {
     <header className="flex items-center justify-between py-10 bg-white">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="hidden h-6 text-2xl font-semibold sm:block">
-          Najma's Blog
+          Najma&apos;s Blog
         </Link>
         <nav className="flex items-center space-x-4 leading-5 sm:space-x-">
           <Link
