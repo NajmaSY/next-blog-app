@@ -22,17 +22,19 @@ export default async function Comments({ postSlug }: { postSlug: string }) {
 
   console.log(comments);
   return (
-    <div>
+    <div className="mt-8">
       <CommentForm postSlug={postSlug} />
-      <h2>| Comments |</h2>
-      <ul>
+      <h2 className="text-2xl font-bold my-4">| Comments |</h2>
+      <ul className="list-disc pl-4">
         {/* @ts-ignore */}
         {comments.map((comment) => {
           return (
-            <li key={comment.id}>
-              {comment.username} says...
+            <li key={comment.id} className="mb-4">
+              <span className="text-lg font-semibold">
+                {comment.username} says...
+              </span>
               <br />
-              {comment.content}
+              <span className="text-gray-700">{comment.content}</span>
             </li>
           );
         })}

@@ -29,12 +29,14 @@ export default function BlogPost({ params }: BlogPostParams) {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>{post.title}</h1>
-      <div
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-        className="prose dark:prose-invert"
-      ></div>
+    <div className="flex flex-col items-center justify-between p-8 bg-white min-h-screen">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+        <div
+          dangerouslySetInnerHTML={{ __html: post.body.html }}
+          className="prose dark:prose-invert"
+        ></div>
+      </div>
       {/* @ts-ignore */}
       <Comments postSlug={params.slug} />
     </div>
